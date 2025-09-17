@@ -1,51 +1,23 @@
 {
 	"info": {
-		"_postman_id": "f99b2207-a305-48e4-bd6a-948d0cb8728e",
-		"name": "APITesting",
+		"_postman_id": "35e03094-fd2a-4306-ac8c-94c83e2249c2",
+		"name": "API Testing",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1467756",
-		"_collection_link": "https://galactic-zodiac-495810.postman.co/workspace/CNATSSep2025~e8e6825a-172f-43c6-be87-e9069ef3e06a/collection/1467756-f99b2207-a305-48e4-bd6a-948d0cb8728e?action=share&source=collection_link&creator=1467756"
+		"_exporter_id": "48386673",
+		"_collection_link": "https://swati-tyagi-8caec703-6214672.postman.co/workspace/ST's-Workspace~6fb2c23d-6f51-4bca-8925-d71e0e6ad26d/collection/48386673-35e03094-fd2a-4306-ac8c-94c83e2249c2?action=share&source=collection_link&creator=48386673"
 	},
 	"item": [
 		{
-			"name": "Prod20",
+			"name": "Get Req",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Mirror\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Check JSON Data\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id).to.eql(15);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Content-Type is present\", function () {\r",
-							"    pm.response.to.have.header(\"Content-Type\");\r",
-							"});\r",
-							"\r",
-							"let jsonData = pm.response.json();\r",
-							"// Check if any review has rating 5\r",
-							"let hasFiveStar = jsonData.reviews.some(review => review.rating === 5);\r",
-							"// Check if any review has rating 5\r",
-							"let hasPleasedComment = jsonData.reviews.some(review =>\r",
-							"    review.comment.toLowerCase().includes(\"pleased\"));\r",
-							"\r",
-							"pm.test(\"At least one review has a rating of 5\", function () {\r",
-							"    pm.expect(hasFiveStar).to.be.true;\r",
-							"});\r",
-							"\r",
-							"pm.test(\"At least one review comment contains the word 'Pleased'\", function () {\r",
-							"    pm.expect(hasPleasedComment).to.be.true;\r",
-							"});\r",
-							""
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -55,6 +27,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "https://dummyjson.com/products/20",
 					"protocol": "https",
@@ -66,15 +47,39 @@
 						"products",
 						"20"
 					]
-				}
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
 		},
 		{
-			"name": "ProdSearch",
+			"name": "Get Req2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "https://dummyjson.com/products/search?q=phone",
 					"protocol": "https",
@@ -92,18 +97,78 @@
 							"value": "phone"
 						}
 					]
-				}
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
 			},
 			"response": []
 		},
 		{
-			"name": "AddProd",
+			"name": "Get Req3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/categories",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products",
+						"categories"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Req",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"My own product\",\r\n    \"description\": \"This is the description of my product.\",\r\n    \"category\": \"furniture\",\r\n    \"price\": 4.99,\r\n    \"discountPercentage\": 9.33,\r\n    \"rating\": 5.0\r\n}\r\n",
+					"raw": "{\n    \"title\": \"My own product\",\n    \"description\": \"This is the description of my product.\",\n    \"category\": \"furniture\",\n    \"price\": 4.99,\n    \"discountPercentage\": 9.33,\n    \"rating\": 5.0\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,18 +186,34 @@
 						"products",
 						"add"
 					]
-				}
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
 		},
 		{
-			"name": "PutReq",
+			"name": "Put Req",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Smitha Product\"\r\n}\r\n",
+					"raw": "{\n    \"title\": \"Smitha Product\"\n}\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -150,18 +231,39 @@
 						"products",
 						"20"
 					]
-				}
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
 		},
 		{
-			"name": "DelRec",
+			"name": "Delete Req",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Smitha Product\"\r\n}\r\n"
+					"raw": "{\n    \"title\": \"Smitha Product\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "https://dummyjson.com/products/20",
@@ -174,7 +276,8 @@
 						"products",
 						"20"
 					]
-				}
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
 		}
